@@ -367,4 +367,9 @@ body {
     color: rgb(0, 0, 0);
     font-size: 18px; /* Prilagodite veličinu fonta prema vašim željama */
   }
+
+.flower-box a {
+    text-decoration: none; /* Uklanja podvlačenje */
+    color: inherit; /* Nasljeđuje boju teksta od roditeljskog elementa */
+  }
   
