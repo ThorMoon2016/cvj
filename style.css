@@ -1,0 +1,370 @@
+/* Resetiranje stilova za osnovni izgled stranice */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Onemogući pomicanje stranice lijevo-desno */
+}
+
+/* Stil za header */
+header {
+    background-color: #f590d6; /* Boja pozadine */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sjena ispod headera */
+}
+
+/* Stil za logo */
+.logo img {
+    width: 150px; /* Prilagodite veličinu vašem logotipu */
+}
+
+/* Stil za ikonu za otvaranje menija */
+.menu-toggle {
+    display: none; /* Početno sakrijte ikonu na većim ekranima */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Boja linija */
+    margin: 3px 0;
+}
+
+/* Stil za navigacijski meni */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Dodajte ovu liniju kako biste postavili smjer na "column" */
+}
+
+.menu li {
+    margin-right: 20px; /* Razmak između opcija menija */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333; /* Boja teksta */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Animacija promjene boje teksta */
+}
+
+.menu a:hover {
+    color: #ff6600; /* Boja teksta prilikom prelaska mišem */
+}
+
+/* Stil za prikaz ikone za otvaranje menija na manjim ekranima */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .menu {
+        display: none; /* Početno sakrijte meni na manjim ekranima */
+        position: absolute;
+        top: 60px; /* Visina headera plus razmak */
+        right: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        width: 150px;
+        z-index: 1;
+        
+    }
+
+    .menu.active {
+        display: flex;
+       
+    }
+}
+
+
+
+ /* Stil za odabir cvijeća */
+.flowers {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.flower-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flower {
+    flex-basis: calc(20% - 1px); /* 50% širine sa razmakom od 3px sa svake strane */
+    margin: 0 1px; /* Dodajte 2px margine sa svake strane svake slike */
+}
+
+.flower img {
+    max-width: 100%; /* Ograničite maksimalnu širinu slike na širinu roditeljskog elementa */
+    max-height: 200px; /* Ograničite maksimalnu visinu slike na 200px (prilagodite prema potrebi) */
+    width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
+    height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
+    display: block; /* Uklonite dodatne prostore oko slika */
+}
+
+/* Stil za mobilnu verziju */
+@media (max-width: 768px) {
+    .flower {
+        flex-basis: calc(48% - 1px); /* 50% širine sa razmakom od 3px sa svake strane */
+    }
+}
+
+.product-box {
+    border: 1px solid #ddd; /* Dodajte okvir */
+    padding: 10px; /* Dodajte razmak unutar box-a */
+    background-color: #f7f7f7; /* Boja pozadine */
+    text-align: center; /* Centrirajte sadržaj */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sjena ispod box-a */
+    margin-bottom: 20px; /* Dodajte razmak između proizvoda */
+}
+
+.product-box img {
+    max-width: 100%; /* Ograničite maksimalnu širinu slike */
+    max-height: 150px; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
+}
+
+
+/* Stil za odabir cvijeća */
+.flower-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px; /* Uklonite marginu koja uzrokuje dodatni razmak */
+}
+
+.flower-box {
+    flex-basis: calc(48% - 5px); /* 40% širine sa razmakom od 10px sa svake strane */
+    margin: 0 2px; /* Dodajte 5px margine sa svake strane svake kutije */
+    padding: 15px; /* Dodajte dodatni razmak unutar kutije */
+    background-color: #f7f7f7; /* Boja pozadine */
+    text-align: center; /* Centrirajte sadržaj */
+    box-shadow: 0 2px 5px rgba(150, 150, 150, 0.89); /* Sjena ispod kutije */
+    margin-bottom: 20px; /* Dodajte razmak između kutija */
+}
+
+.flower-box img {
+    max-width: 100%; /* Ograničite maksimalnu širinu slike */
+    max-height: 200px; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
+    width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
+    height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
+    display: block; /* Uklonite dodatne prostore oko slika */
+}
+
+
+/* Stil za mobilnu verziju */
+@media (max-width: 768px) {
+    .flower-container {
+        flex-wrap: wrap;
+    }
+
+    .flower-box {
+        flex-basis: calc(40% - 1px); /* 50% širine sa razmakom od 1px sa svake strane */
+    }
+}
+
+
+/* Stil za desktop verziju */
+@media (min-width: 1024px) {
+    .flower-container {
+        justify-content: space-between; /* Očuva razmak između kutija u prvom redu */
+    }
+
+    .flower-box {
+        flex-basis: calc(20% - 1px); /* 20% širine sa razmakom od 1px sa svake strane */
+        margin: 0 10px 20px; /* Smanjite razmak sa svake strane kutije na 10px i dodajte 20px donji razmak */
+    }
+
+    .flower-box img {
+        margin: 0 auto; /* Centrirajte sliku unutar kutije */
+    }
+}
+
+/* Stil za desktop verziju */
+@media (min-width: 1024px) {
+    .flower-box {
+        width: 400px; /* Postavite željenu širinu boxa u pikselima */
+        height: 400px; /* Postavite željenu visinu boxa u pikselima */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Postavite na dno boxa */
+        align-items: center; /* Centrirajte horizontalno */
+        padding: 15px; /* Dodajte dodatni razmak unutar kutije */
+    }
+
+    .flower-box img {
+        max-width: 100%; /* Ograničite maksimalnu širinu slike */
+        max-height: 75%; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
+        width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
+        height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
+        display: block; /* Uklonite dodatne prostore oko slika */
+    }
+
+    .flower-details {
+        margin-top: auto; /* Postavite vrh teksta i cijene na dno */
+    }
+}
+
+.price {
+    font-weight: bold; /* Boldiranje cijene */
+    color: #f590d6;
+    font-size: 18px;
+}
+
+/* Stil za meni na desktop uređaju */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        justify-content: center; /* Centrirajte stavke menija horizontalno */
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: row; /* Postavite smjer na "row" da stavke menija budu jedna pored druge */
+    }
+
+    .menu li {
+        margin-right: 20px; /* Razmak između stavki menija na desktop verziji */
+        margin-bottom: 0; /* Uklonite razmak s donje strane stavki menija na desktop verziji */
+    }
+}
+
+
+/* Stil za meni na mobilnim uređajima */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        justify-content: flex-end; /* Pomerite ikonu menija s desne strane */
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0; /* Postavite desni rub menija na 0 */
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        width: 150px;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+    
+    .menu ul {
+        align-items: center;
+        justify-content: center;
+        margin: 0; /* Uklonite vanjski margin od ul elementa */
+    }
+    
+    .menu li {
+        margin-right: 0; /* Uklonite margin sa desne strane stavki menija */
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Postavljanje pozadine sive boje za footer */
+.footer {
+    background-color: #ccc; /* Promijenite boju pozadine prema svojim željama */
+}
+
+/* Postavite željenu veličinu ikonica */
+.social-icons a img {
+    width: 24px; /* Promijenite ovu vrijednost kako biste prilagodili veličinu ikonica */
+    height: 24px; /* Promijenite ovu vrijednost kako biste prilagodili veličinu ikonica */
+    margin: 0 8px; /* Dodajte razmak između ikonica ako je potrebno */
+  }
+
+  /* Centriraj tekst i ikonice unutar footera */
+.footer-content {
+    text-align: center;
+  }
+
+  /* Povećajte veličinu i postavite crnu boju za Font Awesome ikone */
+.social-icons a i {
+    font-size: 24px; /* Povećajte veličinu ikona prema vašim preferencama */
+    margin-right: 10px; 
+  }
+  
+
+  /* Postavite različite boje za Font Awesome ikone */
+.social-icons a i.fa-facebook {
+    color: blue; /* Postavite boju za Facebook ikonu na plavu */
+  }
+  
+  .social-icons a i.fa-viber {
+    color: purple; /* Postavite boju za Viber ikonu na ljubičastu */
+  }
+  
+  .social-icons a i.fa-instagram {
+    color: red; 
+  }
+  
+
+
+/* o proizvodu */
+.flower-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Prilagodite visinu prema svojim potrebama */
+    margin-bottom: 120px; /* Dodajte ovu liniju za pomaknuti tekst ispod slike */
+
+}
+
+.flower-image img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 120px; /* Prilagodite ovu vrijednost prema svojim potrebama */
+}
+
+
+
+/* CSS za footer na dnu stranice ZA TAMO GDJE SE PROIZVOD OTVORI */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .footer {
+    margin-top: auto;
+    background-color: #f0f0f0; /* Promijenite boju pozadine prema svojim željama */
+    text-align: center;
+    padding: 10px 0; /* Prilagodite razmak prema vašim potrebama */
+  }
+  
+
+
+  .flower-info {
+    text-align: center;
+  }
+  
+  .flower-info h2 {
+    color: rgb(221, 91, 91);
+    font-size: 34px; /* Prilagodite veličinu fonta prema vašim željama */
+  }
+  
+  .flower-info p {
+    color: rgb(0, 0, 0);
+    font-size: 18px; /* Prilagodite veličinu fonta prema vašim željama */
+  }
+  
