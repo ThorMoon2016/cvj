@@ -4,5 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('active');
+        // Ovo onemogućava skrolovanje na stranici kada je meni otvoren
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
     });
 });
