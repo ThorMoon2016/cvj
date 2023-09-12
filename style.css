@@ -63,30 +63,86 @@ header {
     color: #ff6600; /* Boja teksta prilikom prelaska mišem */
 }
 
-/* Stil za prikaz ikone za otvaranje menija na manjim ekranima */
+
+/* Stil za meni na desktop uređaju */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        justify-content: center; /* Centrirajte stavke menija horizontalno */
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: row; /* Postavite smjer na "row" da stavke menija budu jedna pored druge */
+    }
+
+    .menu li {
+        margin-right: 20px; /* Razmak između stavki menija na desktop verziji */
+        margin-bottom: 0; /* Uklonite razmak s donje strane stavki menija na desktop verziji */
+    }
+}
+
+
+/* Stil za meni na mobilnim uređajima */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        justify-content: flex-end; /* Pomerite ikonu menija s desne strane */
     }
-    
+
+    /* Stil za meni koji se otvara */
     .menu {
-        display: none; /* Početno sakrijte meni na manjim ekranima */
-        position: absolute;
-        top: 60px; /* Visina headera plus razmak */
-        right: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+        position: fixed; /* Fiksirajte meni na ekranu */
+        top: 112px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 70%, rgba(196, 196, 196, 0.6) 30%);
+    
+        z-index: 9999; /* Postavite viši z-index da prekrije sve ostalo */
         flex-direction: column;
-        width: 150px;
-        z-index: 1;
-        
+        align-items: flex-end; /* Poravnajte stavke s desne strane */
+        justify-content: flex-start; /* Poravnajte meni prema vrhu */
+        padding-right: 10%; /* Dodajte prostor s desne strane */
+        overflow-y: hidden; /* Onemogućite skrolovanje na stranici */
     }
 
     .menu.active {
         display: flex;
-       
+    }
+
+    /* Stil za opcije menija */
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: right; /* Poravnajte tekst s desne strane */
+        padding-top: 30px; /* Pomjerite tekst prema dolje */
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #807f7f;
+        font-weight: bold;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        transition: color 0.3s ease;
+        margin-right: 10px; /* Pomjerite slova prema dolje */
+        font-family: Arial, sans-serif;
+    }
+
+    .menu a:hover {
+        color: #ff6600;
     }
 }
+
+
+
 
 
 
@@ -95,6 +151,7 @@ header {
     background-color: #f7f7f7;
     padding: 20px;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .flower-container {
@@ -215,8 +272,11 @@ header {
 
     .flower-details {
         margin-top: auto; /* Postavite vrh teksta i cijene na dno */
+        
     }
 }
+
+
 
 .price {
     font-weight: bold; /* Boldiranje cijene */
@@ -224,59 +284,7 @@ header {
     font-size: 18px;
 }
 
-/* Stil za meni na desktop uređaju */
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        justify-content: center; /* Centrirajte stavke menija horizontalno */
-    }
 
-    .menu ul {
-        display: flex;
-        flex-direction: row; /* Postavite smjer na "row" da stavke menija budu jedna pored druge */
-    }
-
-    .menu li {
-        margin-right: 20px; /* Razmak između stavki menija na desktop verziji */
-        margin-bottom: 0; /* Uklonite razmak s donje strane stavki menija na desktop verziji */
-    }
-}
-
-
-/* Stil za meni na mobilnim uređajima */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        justify-content: flex-end; /* Pomerite ikonu menija s desne strane */
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0; /* Postavite desni rub menija na 0 */
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        flex-direction: column;
-        width: 150px;
-        z-index: 1;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-    
-    .menu ul {
-        align-items: center;
-        justify-content: center;
-        margin: 0; /* Uklonite vanjski margin od ul elementa */
-    }
-    
-    .menu li {
-        margin-right: 0; /* Uklonite margin sa desne strane stavki menija */
-        margin-bottom: 10px;
-    }
-}
 
 
 
@@ -361,15 +369,21 @@ body {
   .flower-info h2 {
     color: rgb(221, 91, 91);
     font-size: 34px; /* Prilagodite veličinu fonta prema vašim željama */
+    
   }
   
   .flower-info p {
     color: rgb(0, 0, 0);
     font-size: 18px; /* Prilagodite veličinu fonta prema vašim željama */
   }
+  
 
-.flower-box a {
+  .flower-box a {
     text-decoration: none; /* Uklanja podvlačenje */
     color: inherit; /* Nasljeđuje boju teksta od roditeljskog elementa */
   }
   
+
+  p {
+    font-family: Arial, sans-serif;
+}
