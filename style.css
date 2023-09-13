@@ -442,4 +442,20 @@ body {
 
   p {
     font-family: Arial, sans-serif;
+    
+}
+
+
+/* Dodajte ove stilove u vaš CSS fajl ili uključite ih unutar <style> elementa u vašem HTML-u */
+
+.discount-price {
+    text-decoration: line-through;
+    color: #999; /* Možete prilagoditi boju prekrižene cijene */
+    margin-left: 5px; /* Opciono: Dodaje razmak između originalne i prekrižene cijene */
+}
+
+
+
+.row-flex {
+    margin-left: 30px; /* Postavljanje leve margine za sve elemente unutar .row-flex */
 }
