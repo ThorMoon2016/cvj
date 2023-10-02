@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Onemogući pomicanje stranice lijevo-desno */
+    background-color: #f0f0f0;
     
 }
 
@@ -76,6 +77,14 @@ header {
     width: 150px; /* Prilagodite veličinu vašem logotipu */
 }
 
+/* Stil za logo samo na desktop verziji */
+@media (min-width: 768px) {
+    .logo img {
+        display: block; /* Postavite sliku da bude blok-element */
+        margin-left: 750px; /* Centriraj sliku horizontalno */
+    }
+}
+
 /* Stil za ikonu za otvaranje menija */
 .menu-toggle {
     display: none; /* Početno sakrijte ikonu na većim ekranima */
@@ -94,6 +103,7 @@ header {
 .menu {
     display: flex;
     align-items: center;
+    background-color: rgb(202, 167, 202);
 }
 
 .menu ul {
@@ -102,6 +112,7 @@ header {
     margin: 0;
     display: flex;
     flex-direction: column; /* Dodajte ovu liniju kako biste postavili smjer na "column" */
+    font-size: 20px;
 }
 
 .menu li {
@@ -204,7 +215,7 @@ header {
 
  /* Stil za odabir cvijeća */
 .flowers {
-    background-color: #f7f7f7;
+    background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -236,6 +247,7 @@ header {
     }
 }
 
+
 .product-box {
     border: 1px solid #ddd; /* Dodajte okvir */
     padding: 10px; /* Dodajte razmak unutar box-a */
@@ -260,7 +272,7 @@ header {
 }
 
 .flower-box {
-    flex-basis: calc(48% - 5px); /* 40% širine sa razmakom od 10px sa svake strane */
+    flex-basis: calc(18% - 5px); /* 40% širine sa razmakom od 10px sa svake strane */
     margin: 0 2px; /* Dodajte 5px margine sa svake strane svake kutije */
     padding: 15px; /* Dodajte dodatni razmak unutar kutije */
     background-color: #f7f7f7; /* Boja pozadine */
@@ -275,7 +287,9 @@ header {
     width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
     height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
     display: block; /* Uklonite dodatne prostore oko slika */
+    
 }
+
 
 
 /* Stil za mobilnu verziju */
@@ -293,24 +307,13 @@ header {
 /* Stil za desktop verziju */
 @media (min-width: 1024px) {
     .flower-container {
-        justify-content: space-between; /* Očuva razmak između kutija u prvom redu */
+        justify-content: center; /* Centrirajte boxove na sredini stranice */
+        flex-wrap: wrap; /* Dozvolite prelazak u sledeći red ako nema dovoljno mesta */
     }
 
     .flower-box {
-        flex-basis: calc(20% - 1px); /* 20% širine sa razmakom od 1px sa svake strane */
-        margin: 0 10px 20px; /* Smanjite razmak sa svake strane kutije na 10px i dodajte 20px donji razmak */
-    }
-
-    .flower-box img {
-        margin: 0 auto; /* Centrirajte sliku unutar kutije */
-    }
-}
-
-/* Stil za desktop verziju */
-@media (min-width: 1024px) {
-    .flower-box {
-        width: 400px; /* Postavite željenu širinu boxa u pikselima */
-        height: 400px; /* Postavite željenu visinu boxa u pikselima */
+        flex-basis: calc(15% - 20px); /* Smanjite širinu boxova i dodajte razmak između kutija */
+        margin: 0 10px 20px; /* Održite razmak sa svake strane kutije na 10px i dodajte 20px donji razmak */
         display: flex;
         flex-direction: column;
         justify-content: flex-end; /* Postavite na dno boxa */
@@ -320,17 +323,20 @@ header {
 
     .flower-box img {
         max-width: 100%; /* Ograničite maksimalnu širinu slike */
-        max-height: 75%; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
+        max-height: 100%; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
         width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
         height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
         display: block; /* Uklonite dodatne prostore oko slika */
+        margin: 0 auto; /* Centrirajte sliku unutar kutije */
+        margin-top: 1px; /* Smanjite razmak između slike i vrha boxa */
     }
 
     .flower-details {
         margin-top: auto; /* Postavite vrh teksta i cijene na dno */
-        
+        text-align: center; /* Centrirajte tekst unutar boxa */
     }
 }
+
 
 
 
@@ -346,7 +352,7 @@ header {
 
 /* Postavljanje pozadine sive boje za footer */
 .footer {
-    background-color: #ccc; /* Promijenite boju pozadine prema svojim željama */
+    background-color: #f590d6; /* Promijenite boju pozadine prema svojim željama */
 }
 
 /* Postavite željenu veličinu ikonica */
@@ -411,7 +417,7 @@ body {
   
   .footer {
     margin-top: auto;
-    background-color: #f0f0f0; /* Promijenite boju pozadine prema svojim željama */
+    background-color: #f590d6; /* Promijenite boju pozadine prema svojim željama */
     text-align: center;
     padding: 10px 0; /* Prilagodite razmak prema vašim potrebama */
   }
@@ -468,3 +474,75 @@ body {
     margin-top: 35px;
     margin-right: 15px;
 }
+
+/* Dodajte ove stilove u svoj CSS fajl (style.css) samo za desktop verziju */
+@media (min-width: 768px) {
+    .flower-details2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+    }
+
+    .flower-image2 img {
+        max-width: 40%; /* Slika će se skalirati da stane u okvir */
+        margin-left: 280px;
+        margin-top: 30px;
+    }
+
+    .flower-info-header2 h2 {
+        color: pink;
+        margin: 0;
+        margin-top: 50px;
+        margin-left: -750px; 
+        font-size: 30px;
+    }
+
+    .flower-info-header2 h2:nth-child(2) {
+        margin-left: -750px; /* Pomjeri "Cijena: 20KM" ulijevo za 50 piksela (prilagodite prema potrebi) */
+        text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+    }
+
+    .flower-info2 p2 {
+        margin-left: -130px;
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+    }
+    
+}
+
+
+
+
+/* Dodajte ove stilove u svoj CSS fajl (style.css) samo za desktop verziju */
+@media (max-width: 768px) {
+
+
+    .flower-image2 img {
+        max-width: 100%; /* Slika će se skalirati da stane u okvir */
+        margin-top: 0px;
+    }
+
+    .flower-info-header2 h2 {
+        color: pink;
+        margin: 0;
+        margin-top: 50px;
+        align-items: center; /* Centriraj horizontalno */
+        text-align: center; /* Centriraj tekst horizontalno */
+        text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+    }
+
+    .flower-info-header2 p2 {
+        color: rgb(0, 0, 0);
+        font-size: 24px;
+        margin: 0;
+        text-align: center; /* Centriraj tekst horizontalno */
+        text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+    }
+
+    .flower-info2 p2 {
+        /* Dodajte stilove za opis proizvoda ovdje */
+       font-size: 20px;
+    }
+}
+
