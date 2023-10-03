@@ -301,6 +301,17 @@ header {
     .flower-box {
         flex-basis: calc(40% - 1px); /* 50% širine sa razmakom od 1px sa svake strane */
     }
+
+    .flower-box img {
+        max-width: 110%; /* Ograničite maksimalnu širinu slike */
+        max-height: 100%; /* Ograničite maksimalnu visinu slike (prilagodite prema potrebi) */
+        width: auto; /* Omogućite automatsko prilagođavanje širine na temelju ograničenja visine */
+        height: auto; /* Omogućite automatsko prilagođavanje visine na temelju ograničenja širine */
+        display: block; /* Uklonite dodatne prostore oko slika */
+        margin: 0 auto; /* Centrirajte sliku unutar kutije */
+        margin-top: -5px; /* Smanjite razmak između slike i vrha boxa */
+        margin-left: -8px;
+    }
 }
 
 
