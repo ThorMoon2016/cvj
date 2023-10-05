@@ -513,7 +513,7 @@ body {
         text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
     }
 
-    .flower-info2 p2 {
+    .flower-info2 p {
         margin-left: -130px;
         margin-top: 5px;
         font-size: 20px;
@@ -521,6 +521,11 @@ body {
     }
     
 }
+
+.flower-info-header2 p {
+    text-align: center;
+}
+
 
 
 
