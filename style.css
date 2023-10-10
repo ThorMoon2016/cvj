@@ -546,6 +546,7 @@ body {
         align-items: center; /* Centriraj horizontalno */
         text-align: center; /* Centriraj tekst horizontalno */
         text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+        padding-left: 2px; /* Pomaknite tekst 2px udesno */
     }
 
     .flower-info-header2 p2 {
@@ -554,6 +555,7 @@ body {
         margin: 0;
         text-align: center; /* Centriraj tekst horizontalno */
         text-align: left; /* Postavite tekst na lijevu stranu svakog novog reda */
+        
     }
 
     .flower-info2 p2 {
@@ -562,6 +564,12 @@ body {
     }
 }
 
+/* Ovi stilovi će se primeniti samo na desktop verziju (ekrane širine veće od 768 piksela) */
+@media only screen and (min-width: 768px) {
+    .flower-info-header2 p {
+        margin-left: -1500px; /* Pomeri <p> elemente ulevo za 10 piksela */
+    }
+}
 
 
 
@@ -579,16 +587,34 @@ img {
     height: auto;
 }
 
-/* Dodajte dodatne stilove za desktop verziju (širina ekrana veća od 768px) */
+/* Stilovi za mobilne uređaje (manje od 768px širine ekrana) */
+
+/* Ostali stilovi koji se primjenjuju na mobilne uređaje */
+
+/* Stilovi za desktop verziju (768px i više širine ekrana) */
 @media screen and (min-width: 768px) {
     .gallery-container {
-        height: 100px; /* Podesite visinu kontejnera za desktop verziju prema potrebama */
+        height: 500px; /* Primjer: Podesite visinu kontejnera za desktop verziju prema potrebama */
     }
 
     .mySlides {
-        height: 50%; /* Postavite visinu slika na 100% unutar kontejnera za desktop verziju */
+        height: 50%; /* Primjer: Postavite visinu slika na 100% unutar kontejnera za desktop verziju */
+    }
+
+    .mySlides img {
+        max-width: 30%; /* Ograničava maksimalnu širinu slike na 100% širine roditeljskog elementa */
+        height: auto; /* Održava omjer širine i visine slike */
+    }
+
+    .slideshow-container {
+        width: 100%; /* Primjer: Puna širina za desktop verziju */
+    }
+
+    .prev, .next {
+        font-size: 24px; /* Primjer: Povećava veličinu fonta za desktop verziju */
     }
 }
+
 
 
 .slideshow-container {
@@ -633,4 +659,56 @@ img {
 .next {
     right: 0;
 }
+
+
+
+/* Stilizacija za desktop verziju */
+@media (min-width: 768px) {
+    .row-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .row-flex .col-xs-2 {
+        flex: 0 0 5%; /* Prilagodite širinu kolona prema potrebi */
+        max-width: 20%; /* Prilagodite širinu kolona prema potrebi */
+        margin: 10px; /* Prilagodite udaljenost između kolona prema potrebi */
+        text-align: center;
+    }
+
+    .row-flex .col-xs-10 {
+        flex: 0 0 50%; /* Prilagodite širinu kolona prema potrebi */
+        max-width: 70%; /* Prilagodite širinu kolona prema potrebi */
+        margin: 10px; /* Prilagodite udaljenost između kolona prema potrebi */
+        text-align: center;
+    }
+}
+
+
+
+.paypal-button {
+    background-color: #0070ba;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.paypal-button:hover {
+    background-color: #004f77;
+}
+
+
+
+.opcija .detalji {
+    display: none;
+}
+
+.opcija.prikazano .detalji {
+    display: block;
+}
+
 
