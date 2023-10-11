@@ -712,6 +712,7 @@ img {
     border-radius: 10px; /* Zaoblite rubove kontejnera */
     max-width: 300px; /* Postavite maksimalnu širinu kontejnera prema vašim potrebama */
     margin: 0 auto; /* Postavite marginu na auto da biste centrirali kontejner na stranici */
+    margin-bottom: 25px;
 }
 
 
@@ -742,7 +743,6 @@ img {
 .poruci-dugme {
     background-color: #4CAF50; /* Zelena boja */
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -751,6 +751,12 @@ img {
 
 .poruci-dugme:hover {
     background-color: #45a049; /* Tamnija nijansa zelene boje kad korisnik pređe preko dugmeta */
+}
+
+
+#poruka {
+    width: 109%; /* Postavite širinu polja za unos poruke na 100% */
+    box-sizing: border-box; /* Uključuje padding i border u ukupnu širinu elementa */
 }
 
 
@@ -768,15 +774,25 @@ img {
 }
 
 
+
 .naruci-dugme {
     background-color: green; /* Zelena boja */
     color: white;
     border: none;
-    border-radius: 70%; /* Zaobljeni rubovi čine dugme okruglim */
-    padding: 5px 20px; /* Prilagodite veličinu dugmeta prema vašim potrebama */
+    padding: 50px; /* Postavite padding tako da dugme bude kvadrat (iste visine i širine) */
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px; /* Odstupanje od gornjeg dela polja za unos poruke */
-    margin-left: 20px;
+    margin-left: 40px;
+    width: 50px; /* Postavite istu vrednost za width i height kako biste dobili oblik kruga */
+    height: 50px;
+    border-radius: 50%; /* Postavite border-radius na 50% kako biste dobili krug */
+    
+}
+
+.tekst-dugmeta {
+    position: relative;
+    top: -10px; /* Pomeri tekst prema gore */
+    left: -28px; /* Pomeri tekst ulevo */
 }
 
