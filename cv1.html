@@ -52,8 +52,118 @@
     
 
 
+<!-- Dodajte ovo na dno vašeg HTML koda, nakon što su definisane vaše info-box komponente i dugme "NARUČI" -->
+<script>
+    const inputFields = document.querySelectorAll('.info-container input, .info-container textarea');
+    const naruciButton = document.getElementById('naruciButton');
+
+    // Kreirajte funkciju koja proverava da li su sva polja popunjena
+    function proveriPopunjenostPolja() {
+        let svaPoljaPopunjena = true;
+        inputFields.forEach(function(field) {
+            if (field.value === '') {
+                svaPoljaPopunjena = false;
+            }
+        });
+
+        // Omogućite dugme "NARUČI" ako su sva polja popunjena, inače onemogućite
+        naruciButton.disabled = !svaPoljaPopunjena;
+    }
+
+    // Dodajte event listener na svako input polje i textarea
+    inputFields.forEach(function(field) {
+        field.addEventListener('input', proveriPopunjenostPolja);
+    });
+
+    // Event listener za klik na dugme "NARUČI"
+    naruciButton.addEventListener('click', function(event) {
+        // Ako sva polja nisu popunjena, sprečite slanje forme
+        if (!proveriPopunjenostPolja()) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+
+
+
+<button class="poruci-dugme">Poruči</button>
+
+    <div class="info-container">
+        <div class="info-box">
+            <input type="text" id="imePrezimePosiljaoca" name="imePrezimePosiljaoca" placeholder="Unesite ime i prezime pošiljaoca">
+        </div>
+        <div class="info-box">
+            <input type="email" id="emailPosiljaoca" name="emailPosiljaoca" placeholder="Unesite email pošiljaoca">
+        </div>
+        <div class="info-box">
+            <input type="tel" id="telefonPosiljaoca" name="telefonPosiljaoca" placeholder="Unesite telefon pošiljaoca">
+        </div>
+        <div class="info-box">
+            <input type="text" id="imePrezimePrimaoca" name="imePrezimePrimaoca" placeholder="Unesite ime i prezime primaoca">
+        </div>
+        <div class="info-box">
+            <input type="tel" id="telefonPrimaoca" name="telefonPrimaoca" placeholder="Unesite telefon primaoca">
+        </div>
+        <div class="info-box">
+            <input type="text" id="gradPrimaoca" name="gradPrimaoca" placeholder="Unesite grad primaoca">
+        </div>
+        <div class="info-box">
+            <input type="text" id="adresaPrimaoca" name="adresaPrimaoca" placeholder="Unesite adresu primaoca">
+        </div>
+        <div class="info-box">
+            <input type="date" id="datumIsporuke" name="datumIsporuke">
+        </div>
+        <div class="info-box">
+            <textarea id="poruka" name="poruka" placeholder="Unesite poruku"></textarea>
+        </div>
+        <input type="hidden" name="Proizvod" value="crveni buket">
+        <button class="naruci-dugme" id="naruciButton" disabled>NARUČI</button>
+    </div>
+
+  
+
+<!-- Uključite jQuery ako već nije uključen na vašoj stranici -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#naruciButton").click(function(event) {
+            // Spriječi podnošenje obrasca
+            event.preventDefault();
+
+            // Spremite podatke iz formulara u objekt
+            var formData = {
+                imePrezimePosiljaoca: $("#imePrezimePosiljaoca").val(),
+                emailPosiljaoca: $("#emailPosiljaoca").val(),
+                telefonPosiljaoca: $("#telefonPosiljaoca").val(),
+                imePrezimePrimaoca: $("#imePrezimePrimaoca").val(),
+                telefonPrimaoca: $("#telefonPrimaoca").val(),
+                gradPrimaoca: $("#gradPrimaoca").val(),
+                adresaPrimaoca: $("#adresaPrimaoca").val(),
+                datumIsporuke: $("#datumIsporuke").val(),
+                poruka: $("#poruka").val(),
+                Proizvod: "crveni buket"
+            };
+
+            // Napravite AJAX poziv na FormsPree
+            $.ajax({
+                url: "https://formspree.io/f/mjvqkzbv",
+                method: "POST",
+                data: formData,
+                dataType: "json",
+                success: function(response) {
+                    // Ovdje možete dodati kod za prikazivanje PayPal dugmeta ili drugih funkcionalnosti nakon što je forma uspješno poslana
+                    // Na primer, prikazivanje PayPal dugmeta ili redirekcija korisnika na PayPal stranicu.
+                }
+            });
+        });
+    });
+</script>
+
     
-    <div id="paypal-button-container"></div>
+    <div id="paypal-button-container" style="display: none;"></div>
+
 
 
 
@@ -63,7 +173,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '50.00' // Postavite iznos koji želite da naplatite
+                            value: '5286.00' // Postavite iznos koji želite da naplatite
                         }
                     }]
                 });
