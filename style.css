@@ -687,28 +687,96 @@ img {
 
 
 
-.paypal-button {
-    background-color: #0070ba;
-    color: #ffffff;
+/* Osnovni stil za PayPal dugme */
+#paypal-button-container {
+    /* Vaši osnovni stilovi za dugme ovdje */
+}
+
+/* Stil za mobilne uređaje (širina ekrana manja od 768 piksela) */
+@media (max-width: 767px) {
+    #paypal-button-container {
+        font-size: 14px; /* Prilagodite veličinu teksta prema vašim potrebama */
+        padding: 20px 30px; /* Prilagodite padding prema vašim potrebama */
+    }
+}
+
+
+
+
+
+.info-container {
+    display: flex;
+    flex-direction: column; /* Postavite smjer fleksibilnog kontejnera na kolonu za mobilne uređaje */
+    border: 1px solid #ccc; /* Dodajte ivicu oko kontejnera */
+    padding: 20px; /* Dodajte odstupanje unutar kontejnera */
+    border-radius: 10px; /* Zaoblite rubove kontejnera */
+    max-width: 300px; /* Postavite maksimalnu širinu kontejnera prema vašim potrebama */
+    margin: 0 auto; /* Postavite marginu na auto da biste centrirali kontejner na stranici */
+}
+
+
+.info-box {
+    margin-bottom: 15px;
+}
+
+.info-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.info-box input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.info-box input,
+.info-box textarea {
+    margin-left: -10px; /* Prilagodite vrednost prema vašim potrebama */
+}
+
+
+.poruci-dugme {
+    background-color: #4CAF50; /* Zelena boja */
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.paypal-button:hover {
-    background-color: #004f77;
+.poruci-dugme:hover {
+    background-color: #45a049; /* Tamnija nijansa zelene boje kad korisnik pređe preko dugmeta */
 }
 
 
+/* Stil za mobilne uređaje (širina ekrana manja od 768 piksela) */
+@media (max-width: 767px) {
+    .poruci-dugme {
+        padding: 10px 16px; /* Prilagodite veličinu dugmeta prema vašim potrebama */
+        font-size: 20px; /* Prilagodite veličinu teksta prema vašim potrebama */
+        margin: 50px; /* Prilagodite marginu sa strana prema vašim potrebama */
+    }
+}
 
-.opcija .detalji {
+.info-container {
     display: none;
 }
 
-.opcija.prikazano .detalji {
-    display: block;
-}
 
+.naruci-dugme {
+    background-color: green; /* Zelena boja */
+    color: white;
+    border: none;
+    border-radius: 70%; /* Zaobljeni rubovi čine dugme okruglim */
+    padding: 5px 20px; /* Prilagodite veličinu dugmeta prema vašim potrebama */
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; /* Odstupanje od gornjeg dela polja za unos poruke */
+    margin-left: 20px;
+}
 
