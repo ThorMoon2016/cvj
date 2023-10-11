@@ -34,3 +34,48 @@ window.onload = function() {
         showSlides(slideIndex += n);
     }
 };
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const poruciDugme = document.querySelector('.poruci-dugme');
+    const infoContainer = document.querySelector('.info-container');
+
+    poruciDugme.addEventListener('click', function() {
+        infoContainer.style.display = 'block';
+    });
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const naruciDugme = document.querySelector('.naruci-dugme');
+    const paypalContainer = document.getElementById('paypal-button-container');
+
+    naruciDugme.addEventListener('click', function() {
+        // Prikazi PayPal dugme kada se klikne na dugme "NARUČI"
+        paypalContainer.style.display = 'block';
+
+        // Ovde možete dodati kod za inicijalizaciju PayPal dugmeta, ako je potrebno
+    });
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const naruciButton = document.getElementById('naruciButton');
+    const inputFields = document.querySelectorAll('input, textarea');
+
+    inputFields.forEach(function(input) {
+        input.addEventListener('input', function() {
+            const allFieldsFilled = Array.from(inputFields).every(field => field.value.trim() !== '');
+            naruciButton.disabled = !allFieldsFilled;
+        });
+    });
+});
+
+
