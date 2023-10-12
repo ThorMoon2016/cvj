@@ -710,7 +710,7 @@ img {
     border: 1px solid #ccc; /* Dodajte ivicu oko kontejnera */
     padding: 20px; /* Dodajte odstupanje unutar kontejnera */
     border-radius: 10px; /* Zaoblite rubove kontejnera */
-    max-width: 300px; /* Postavite maksimalnu širinu kontejnera prema vašim potrebama */
+    width: 80%;
     margin: 0 auto; /* Postavite marginu na auto da biste centrirali kontejner na stranici */
     margin-bottom: 25px;
 }
@@ -783,7 +783,7 @@ img {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px; /* Odstupanje od gornjeg dela polja za unos poruke */
-    margin-left: 40px;
+    margin-left: 100px;
     width: 50px; /* Postavite istu vrednost za width i height kako biste dobili oblik kruga */
     height: 50px;
     border-radius: 50%; /* Postavite border-radius na 50% kako biste dobili krug */
@@ -794,5 +794,94 @@ img {
     position: relative;
     top: -10px; /* Pomeri tekst prema gore */
     left: -28px; /* Pomeri tekst ulevo */
+}
+
+
+
+
+
+.product-outline-box {
+    display: flex;
+    flex-direction: column; /* Postavite smjer fleksibilnog kontejnera na kolonu za mobilne uređaje */
+    border: 1px solid #ccc; /* Dodajte ivicu oko kontejnera */
+    padding: 20px; /* Dodajte odstupanje unutar kontejnera */
+    border-radius: 10px; /* Zaoblite rubove kontejnera */
+    width: 80%;
+    margin: 0 auto; /* Postavite marginu na auto da biste centrirali kontejner na stranici */
+    margin-bottom: 25px;
+}
+
+.product-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   
+    position: relative;
+    
+}
+
+.product-box input {
+    margin-right: 10px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Prilagodite ovu vrijednost prema potrebi */
+}
+
+.product-img img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-right: 10px; /* Prilagodite ovu vrijednost prema potrebi */
+}
+
+.product-price {
+    font-weight: bold;
+    margin-right: 10px; /* Prilagodite ovu vrijednost prema potrebi */
+}
+
+.product-details {
+    color: #888;
+    cursor: pointer;
+}
+
+.product-details-popup {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+}
+
+.product-box:hover .product-details-popup {
+    display: block;
+}
+
+
+.product-outline-box {
+    display: none;
+}
+
+
+.form-subtitle {
+    display: none;
+}
+
+
+#openInfoSectionLabel {
+    display: none;
+}
+
+
+#infoContainer {
+    display: none;
 }
 
