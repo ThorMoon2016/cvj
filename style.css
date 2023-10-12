@@ -885,5 +885,23 @@ img {
     display: none;
 }
 
+.form-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
 
-.form-subtitle
+.form-outline-box {
+    border: 2px solid #ccc;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.form-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
