@@ -47,6 +47,65 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const poruciDugme = document.querySelector('.poruci-dugme');
+    const extrasSectionLabel = document.getElementById('openExtrasSectionLabel');
+    const infoSectionLabel = document.getElementById('openInfoSectionLabel');
+    const productOutlineBox = document.querySelector('.product-outline-box');
+    const infoContainer = document.getElementById('infoContainer');
+    const naruciButton = document.getElementById('naruciButton');
+
+    // Dodajte flag za praćenje statusa sekcija
+    let extrasSectionOpen = false;
+    let infoSectionOpen = false;
+
+    poruciDugme.addEventListener('click', function() {
+        extrasSectionLabel.style.display = 'block';
+        extrasSectionLabel.addEventListener('click', function() {
+            if (extrasSectionOpen) {
+                productOutlineBox.style.display = 'none';
+            } else {
+                productOutlineBox.style.display = 'block';
+            }
+            extrasSectionOpen = !extrasSectionOpen;
+
+            // Ako je sekcija "Podaci" otvorena, zatvorite je
+            if (infoSectionOpen) {
+                infoContainer.style.display = 'none';
+                naruciButton.disabled = true;
+                infoSectionOpen = !infoSectionOpen;
+                infoSectionLabel.classList.remove('active');
+            }
+        });
+
+        infoSectionLabel.style.display = 'block';
+        infoContainer.style.display = 'none'; // Početno sakrijte sekciju "Podaci"
+        naruciButton.disabled = true; // Početno onemogućite dugme "Naruči"
+
+        infoSectionLabel.addEventListener('click', function() {
+            if (infoSectionOpen) {
+                infoContainer.style.display = 'none';
+                naruciButton.disabled = true;
+            } else {
+                infoContainer.style.display = 'block';
+                naruciButton.disabled = false;
+            }
+            infoSectionOpen = !infoSectionOpen;
+
+            // Ako je sekcija "Dodatak uz cvijeće" otvorena, zatvorite je
+            if (extrasSectionOpen) {
+                productOutlineBox.style.display = 'none';
+                extrasSectionOpen = !extrasSectionOpen;
+                extrasSectionLabel.classList.remove('active');
+            }
+        });
+    });
+});
+
+
+
+
+
 
 
 
@@ -76,6 +135,58 @@ document.addEventListener('DOMContentLoaded', function() {
             naruciButton.disabled = !allFieldsFilled;
         });
     });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var productCheckbox = document.getElementById('productCheckbox');
+    var additionalNotes = document.getElementById('additionalNotes');
+    var completeOrderButton = document.getElementById('completeOrderButton');
+
+    productCheckbox.addEventListener('change', function() {
+        if (productCheckbox.checked) {
+            // Proizvod je odabran, možete izvršiti odgovarajuće akcije
+            // Na primjer, prikažite detalje o proizvodu
+            showProductDetails();
+        } else {
+            // Proizvod nije odabran, sakrijte detalje o proizvodu
+            hideProductDetails();
+        }
+    });
+
+    completeOrderButton.addEventListener('click', function() {
+        // Ovdje možete dohvatiti vrijednosti checkbox-a i dodatnih napomena
+        var isProductSelected = productCheckbox.checked;
+        var notes = additionalNotes.value;
+
+        // Ovdje možete izvršiti akcije na temelju odabranih proizvoda i dodatnih napomena
+        // Na primjer, slanje podataka na server ili prikazivanje zahvalne poruke
+        if (isProductSelected) {
+            // Proizvod je odabran, izvršite odgovarajuće akcije
+            // Na primjer, prikažite zahvalnu poruku korisniku
+            displayThankYouMessage();
+        } else {
+            // Proizvod nije odabran, obavijestite korisnika da odabere proizvod
+            alert('Molimo odaberite proizvod prije nego završite narudžbu.');
+        }
+    });
+
+    function showProductDetails() {
+        var productDetails = document.querySelector('.productDetails');
+        productDetails.style.display = 'block';
+    }
+
+    function hideProductDetails() {
+        var productDetails = document.querySelector('.productDetails');
+        productDetails.style.display = 'none';
+    }
+
+    function displayThankYouMessage() {
+        // Ovdje možete prikazati zahvalnu poruku korisniku
+        alert('Hvala vam na narudžbi! Vaša narudžba je uspješno zaprimljena.');
+    }
 });
 
 
