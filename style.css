@@ -572,6 +572,11 @@ body {
 }
 
 
+@media only screen and (min-width: 768px) {
+    .flower-info2 {
+        margin-top: 20px;
+    }
+}
 
 
 .gallery-container {
@@ -701,7 +706,14 @@ img {
 }
 
 
-
+/* Stil za mobilne uređaje (širina ekrana manja od 768 piksela) */
+@media (min-width: 767px) {
+    #paypal-button-container {
+        font-size: 14px; /* Prilagodite veličinu teksta prema vašim potrebama */
+        width: 30%;
+        margin: 0 auto;
+    }
+}
 
 
 .info-container {
@@ -740,6 +752,18 @@ img {
 }
 
 
+
+/* Media query za desktop uređaje sa širinom ekrana većom od 768 piksela */
+@media (min-width: 768px) {
+    .info-box {
+        width: 80%; /* Prilagodite širinu prema vašim potrebama */
+        margin-left: 10%; /* Podešavanje margine sa leve strane */
+        margin-right: 10%; /* Podešavanje margine sa desne strane */
+    }
+}
+
+
+
 .poruci-dugme {
     background-color: #4CAF50; /* Zelena boja */
     color: white;
@@ -760,6 +784,15 @@ img {
 }
 
 
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    #poruka {
+        width: 104%; /* Prilagodite širinu prema vašim potrebama */
+        box-sizing: border-box; /* Uključuje padding i border u ukupnu širinu elementa */
+    }
+}
+
+
 /* Stil za mobilne uređaje (širina ekrana manja od 768 piksela) */
 @media (max-width: 767px) {
     .poruci-dugme {
@@ -773,6 +806,15 @@ img {
     display: none;
 }
 
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    .poruci-dugme {
+        padding: 20px 26px; /* Prilagodite veličinu dugmeta prema vašim potrebama */
+        display: block; /* Postavljamo dugme kao blok element */
+        margin: -65px auto 0; /* Centriramo dugme po horizontali */
+        font-size: 20px;
+    }
+}
 
 
 .naruci-dugme {
@@ -797,6 +839,12 @@ img {
 }
 
 
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    .naruci-dugme {
+        margin-left: 200px; /* Pomeri dugme za 20px udesno */
+    }
+}
 
 
 
@@ -847,9 +895,20 @@ img {
 }
 
 .product-details {
-    color: #888;
+    color: #f590d6;
     cursor: pointer;
 }
+
+
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    .product-details {
+        margin-left: 380px; /* Pomeri element za 20px udesno */
+        margin-top: -30px; /* Pomakni element 10px prema gore */
+    }
+}
+
+
 
 .product-details-popup {
     position: absolute;
@@ -885,6 +944,7 @@ img {
     display: none;
 }
 
+
 .form-subtitle {
     font-size: 18px;
     font-weight: bold;
@@ -904,4 +964,29 @@ img {
     background-color: #ccc;
     margin: 20px 0;
 }
+
+
+
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    .product-outline-box {
+        /* Postavite željene stilove za desktop verziju ovde */
+        font-size: 18px; /* Prilagodite veličinu fonta prema vašim potrebama */
+        padding: 10px; /* Prilagodite padding prema vašim potrebama */
+        width: 30%;
+    }
+}
+
+
+/* Media query za desktop uređaje sa širinom ekrana većom od 768px */
+@media (min-width: 768px) {
+    .info-container {
+        /* Postavite željene stilove za desktop verziju ovde */
+        font-size: 18px; /* Prilagodite veličinu fonta prema vašim potrebama */
+        padding: 10px; /* Prilagodite padding prema vašim potrebama */
+        width: 30%;
+    }
+}
+
+
 
