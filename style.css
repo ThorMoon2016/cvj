@@ -348,6 +348,10 @@ header {
     }
 }
 
+/* CSS stilizacija za boldiranje teksta u klasi "name" */
+.name {
+    font-weight: bold;
+}
 
 
 
@@ -990,3 +994,37 @@ img {
 
 
 
+.view-all-link {
+    text-align: right;
+    margin-top: 20px; /* Podešavanje razmaka između cvijeta 4 i linka "Pogledaj sve" */
+}
+
+.view-all-link a {
+    color: #f590d6; /* Postavljanje roze boje za link */
+    text-decoration: none; /* Uklanjanje podvučenosti linka */
+    font-weight: bold; /* Podešavanje debljine fonta */
+}
+
+
+/* Stil za označene checkboxove */
+input[type="checkbox"]:checked + label {
+    background-color: pink; /* Postavite željenu boju pozadine ovdje */
+}
+
+
+.store-info {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px; /* Ovo ograničava širinu informacija o prodavnici */
+}
+
+
+@media (min-width: 768px) {
+    .about-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+}
