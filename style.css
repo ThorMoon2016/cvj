@@ -279,6 +279,7 @@ header {
     text-align: center; /* Centrirajte sadržaj */
     box-shadow: 0 2px 5px rgba(150, 150, 150, 0.89); /* Sjena ispod kutije */
     margin-bottom: 20px; /* Dodajte razmak između kutija */
+    border-radius: 10px;
 }
 
 .flower-box img {
